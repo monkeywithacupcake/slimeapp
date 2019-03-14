@@ -11,53 +11,95 @@ import UIKit
 class SlimeVC: UIViewController {
 
     // MARK: - Properties
-    var oneDrop = DropView()
-    var twoDrop = DropView()
+    //var oneDrop = DropView()
+    //var twoDrop = DropView()
+    var drops = [DropView]()
+    var pinks = [PinkView]()
+    var mores = [DropView]()
     var animator: UIDynamicAnimator?
 
     // MARK: - Lifecycle
     override func loadView() {
         let view = UIView()
         self.view = view
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createFallingObject()
+        createDrops()
+        //createFallingObjects()
+        //animateObjects(a: pinks)
+        animateObjects(a: mores)
     }
 
-    func createFallingObject() {
 
-        //remove square from superview
-        oneDrop.removeFromSuperview()
 
-        //create the shape
-        var dimen = CGRect(x: 130,y: 25,width: 90,height: 90)
-        oneDrop = DropView(frame: dimen)
-        oneDrop.asCircle()
-        dimen = CGRect(x: 30,y: 5,width: 30,height: 40)
-        twoDrop = DropView(frame: dimen)
-
-        //then add to the screen
-        self.view.addSubview(oneDrop)
-        self.view.addSubview(twoDrop)
+    func createDrops(){
+        //drops = [DropView(),DropView(),DropView(),DropView(),DropView()]
+        //pinks = [PinkView(),PinkView(),PinkView()]
+        for _ in 1...400 {
+            mores.append(DropView())
+        }
+        //mores = [DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView(),DropView()]
+    }
+    func animateObjects(a: [UIView]){
+        a.forEach { ad in
+            ad.removeFromSuperview()
+            self.view.addSubview(ad)
+        }
 
         //Initialize the animator
         animator = UIDynamicAnimator(referenceView: self.view)
 
-        //Add gravity to the squares
-        let gravity = UIGravityBehavior(items: [oneDrop, twoDrop])
-        let direction = CGVector(dx: 0.0, dy: 0.05)
+        //Gravity
+        let gravity = UIGravityBehavior(items: a)
+        let direction = CGVector(dx: CGFloat.random(in: 0.01...0.2), dy: CGFloat.random(in: 0.01...0.2))
         gravity.gravityDirection = direction
+        gravity.angle = CGFloat.random(in: 0.01...0.5)
 
         //Collision
-        let boundaries = UICollisionBehavior(items: [oneDrop, twoDrop])
+        let boundaries = UICollisionBehavior(items: a)
         boundaries.translatesReferenceBoundsIntoBoundary = true
 
         //Elasticity
-        let bounce = UIDynamicItemBehavior(items: [oneDrop, twoDrop])
-        bounce.elasticity = 0.3
+        let bounce = UIDynamicItemBehavior(items: a)
+        bounce.elasticity = CGFloat.random(in: 0.3...1.0)
+
+        // Push
+        let pushes = UIPushBehavior(items: a, mode: .continuous)
+        pushes.pushDirection = CGVector(dx: CGFloat.random(in: 0.0...1.0), dy: CGFloat.random(in: 0.0...1.0))
+
+        animator?.addBehavior(boundaries)
+        animator?.addBehavior(bounce)
+        animator?.addBehavior(gravity)
+        animator?.addBehavior(pushes)
+    }
+
+    func createFallingObjects() {
+        drops.forEach { d in
+            d.removeFromSuperview()
+            self.view.addSubview(d)
+        }
+
+        //Initialize the animator
+        animator = UIDynamicAnimator(referenceView: self.view)
+
+        //Gravity
+        let gravity = UIGravityBehavior(items: drops)
+        let direction = CGVector(dx: 0.07, dy: 0.05)
+        gravity.gravityDirection = direction
+
+        //Collision
+        let boundaries = UICollisionBehavior(items: drops)
+        boundaries.translatesReferenceBoundsIntoBoundary = true
+
+        //Elasticity
+        let bounce = UIDynamicItemBehavior(items: drops)
+        bounce.elasticity = CGFloat.random(in: 0.0...1.0)
+        //func addLinearVelocity(_ velocity: CGPoint, for item: UIDynamicItem)
+
+
 
         animator?.addBehavior(boundaries)
         animator?.addBehavior(bounce)

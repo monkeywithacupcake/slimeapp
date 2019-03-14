@@ -1,5 +1,5 @@
 //
-//  DropView.swift
+//  PinkView.swift
 //  slimeapp
 //
 //  Created by Jess Chandler on 3/11/19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DropView: UIView {
+class PinkView: UIView {
     //initWithFrame to init view from code
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,8 @@ class DropView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = UIColor.randomColor()
-        let w = Double.random(in: 10.0...50.0)
+        backgroundColor = UIColor.purple
+        let w = Double.random(in: 5.0...50.0)
         let x = Double.random(in: 0.0...200.0)
         let y = Double.random(in: 10.0...100.0)
         let dimen = CGRect(x: x,y: y,width: w,height: w)

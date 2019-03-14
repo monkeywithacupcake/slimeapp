@@ -14,6 +14,7 @@
 		C82BD0152237238400ADDBD7 /* slimeappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BD0142237238400ADDBD7 /* slimeappUITests.swift */; };
 		C84BDC0222374B1E00F02142 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BDC0122374B1E00F02142 /* DropView.swift */; };
 		C84BDC0422374BCC00F02142 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BDC0322374BCC00F02142 /* Extensions.swift */; };
+		C8BB9A532239C63C001F644D /* PinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9A522239C63C001F644D /* PinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C82BD0162237238400ADDBD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C84BDC0122374B1E00F02142 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		C84BDC0322374BCC00F02142 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C8BB9A522239C63C001F644D /* PinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C84BDC0122374B1E00F02142 /* DropView.swift */,
+				C8BB9A522239C63C001F644D /* PinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				C82BD0022237238200ADDBD7 /* SlimeVC.swift in Sources */,
 				C82BD0002237238100ADDBD7 /* AppDelegate.swift in Sources */,
 				C84BDC0222374B1E00F02142 /* DropView.swift in Sources */,
+				C8BB9A532239C63C001F644D /* PinkView.swift in Sources */,
 				C84BDC0422374BCC00F02142 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
