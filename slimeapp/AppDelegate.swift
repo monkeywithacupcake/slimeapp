@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let vc = SlimeVC()
+        let vc = TryMazeVC()
 
         window!.rootViewController = vc
         window!.makeKeyAndVisible()

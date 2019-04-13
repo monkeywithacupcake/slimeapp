@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreMotion
+import SpriteKit
 
 class SlimeVC: UIViewController {
 
@@ -14,6 +16,8 @@ class SlimeVC: UIViewController {
     var dropTimer: Timer!
     var drops = [DropView]()
     var animator: UIDynamicAnimator?
+    var motionmanager: CMMotionManager?
+    var player: SKSpriteNode!
 
     // MARK: - Lifecycle
     override func loadView() {

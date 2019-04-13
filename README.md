@@ -10,6 +10,9 @@ Now, we have a lot of colored views all over
 
 ![Current](moreslime.png)
 
+And they are created on a timer every second
+![move](movingslimem.mp4)
+
 Here's what we had on the first day
 
 ![Day One](fallen_test.png)
