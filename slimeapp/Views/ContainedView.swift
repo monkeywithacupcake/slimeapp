@@ -23,15 +23,17 @@ class ContainedView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = UIColor.randomColor()
-        let w = Double.random(in: 10.0...50.0)
-        let x = Double.random(in: 0.0...200.0)
-        let y = Double.random(in: 10.0...100.0)
+        backgroundColor = UIColor.red
+        let w = 20.0
+        let x = 0.0
+        let y = 0.0
         let dimen = CGRect(x: x,y: y,width: w,height: w)
-        frame = dimen
+        bounds = dimen
+        self.frame = bounds
         //self.frame(forAlignmentRect: dimen)
         //self.init(frame: dimen)
         self.asCircle()
-        self.spanSuperView()
+        self.translatesAutoresizingMaskIntoConstraints = false
+        //self.spanSuperView()
     }
 }
