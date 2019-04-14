@@ -12,10 +12,12 @@
 		C82BD0072237238400ADDBD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82BD0062237238400ADDBD7 /* Assets.xcassets */; };
 		C82BD00A2237238400ADDBD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82BD0082237238400ADDBD7 /* LaunchScreen.storyboard */; };
 		C82BD0152237238400ADDBD7 /* slimeappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82BD0142237238400ADDBD7 /* slimeappUITests.swift */; };
+		C84B03632263679000488FB6 /* BoxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B03622263679000488FB6 /* BoxScene.swift */; };
+		C84B0365226367DB00488FB6 /* BoxScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C84B0364226367DB00488FB6 /* BoxScene.sks */; };
 		C84BDC0222374B1E00F02142 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BDC0122374B1E00F02142 /* DropView.swift */; };
 		C84BDC0422374BCC00F02142 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BDC0322374BCC00F02142 /* Extensions.swift */; };
 		C8746A4922627E3D000212A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8746A4822627E3D000212A6 /* GameScene.swift */; };
-		C8746A4B22627E6E000212A6 /* TryMazeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8746A4A22627E6E000212A6 /* TryMazeVC.swift */; };
+		C8746A4B22627E6E000212A6 /* BoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8746A4A22627E6E000212A6 /* BoxVC.swift */; };
 		C8746A4D22627E90000212A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C8746A4C22627E90000212A6 /* GameScene.sks */; };
 		C8BB9A532239C63C001F644D /* PinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9A522239C63C001F644D /* PinkView.swift */; };
 		C8BF84B7226237B100A1A2F0 /* ContainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF84B6226237B100A1A2F0 /* ContainedView.swift */; };
@@ -41,10 +43,12 @@
 		C82BD0102237238400ADDBD7 /* slimeappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slimeappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82BD0142237238400ADDBD7 /* slimeappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slimeappUITests.swift; sourceTree = "<group>"; };
 		C82BD0162237238400ADDBD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C84B03622263679000488FB6 /* BoxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxScene.swift; sourceTree = "<group>"; };
+		C84B0364226367DB00488FB6 /* BoxScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoxScene.sks; sourceTree = "<group>"; };
 		C84BDC0122374B1E00F02142 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		C84BDC0322374BCC00F02142 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8746A4822627E3D000212A6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		C8746A4A22627E6E000212A6 /* TryMazeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryMazeVC.swift; sourceTree = "<group>"; };
+		C8746A4A22627E6E000212A6 /* BoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxVC.swift; sourceTree = "<group>"; };
 		C8746A4C22627E90000212A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C8BB9A522239C63C001F644D /* PinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkView.swift; sourceTree = "<group>"; };
 		C8BF84B6226237B100A1A2F0 /* ContainedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainedView.swift; sourceTree = "<group>"; };
@@ -92,8 +96,10 @@
 				C82BCFFF2237238100ADDBD7 /* AppDelegate.swift */,
 				C82BD0012237238200ADDBD7 /* SlimeVC.swift */,
 				C8746A4822627E3D000212A6 /* GameScene.swift */,
-				C8746A4A22627E6E000212A6 /* TryMazeVC.swift */,
+				C84B03622263679000488FB6 /* BoxScene.swift */,
+				C8746A4A22627E6E000212A6 /* BoxVC.swift */,
 				C8746A4C22627E90000212A6 /* GameScene.sks */,
+				C84B0364226367DB00488FB6 /* BoxScene.sks */,
 				C84BDC0522374BD800F02142 /* Views */,
 				C82BD0062237238400ADDBD7 /* Assets.xcassets */,
 				C82BD0082237238400ADDBD7 /* LaunchScreen.storyboard */,
@@ -213,6 +219,7 @@
 			files = (
 				C82BD00A2237238400ADDBD7 /* LaunchScreen.storyboard in Resources */,
 				C8746A4D22627E90000212A6 /* GameScene.sks in Resources */,
+				C84B0365226367DB00488FB6 /* BoxScene.sks in Resources */,
 				C82BD0072237238400ADDBD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,9 +241,10 @@
 				C82BD0022237238200ADDBD7 /* SlimeVC.swift in Sources */,
 				C8746A4922627E3D000212A6 /* GameScene.swift in Sources */,
 				C82BD0002237238100ADDBD7 /* AppDelegate.swift in Sources */,
+				C84B03632263679000488FB6 /* BoxScene.swift in Sources */,
 				C8BF84B7226237B100A1A2F0 /* ContainedView.swift in Sources */,
 				C84BDC0222374B1E00F02142 /* DropView.swift in Sources */,
-				C8746A4B22627E6E000212A6 /* TryMazeVC.swift in Sources */,
+				C8746A4B22627E6E000212A6 /* BoxVC.swift in Sources */,
 				C8BB9A532239C63C001F644D /* PinkView.swift in Sources */,
 				C84BDC0422374BCC00F02142 /* Extensions.swift in Sources */,
 			);

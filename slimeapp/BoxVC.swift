@@ -1,5 +1,5 @@
 //
-//  TryMazeVC.swift
+//  BoxVC.swift
 //  slimeapp
 //
 //  Created by Jess Chandler on 4/13/19.
@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class TryMazeVC: UIViewController {
+class BoxVC: UIViewController {
 
 
 
@@ -21,7 +21,7 @@ class TryMazeVC: UIViewController {
         self.view = sceneView
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "BoxScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
 
