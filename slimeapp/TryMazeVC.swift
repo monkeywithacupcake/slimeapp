@@ -12,12 +12,16 @@ import GameplayKit
 
 class TryMazeVC: UIViewController {
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let sceneView = SKView()
+        self.view = sceneView
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GScene") {
+            if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
 
@@ -37,11 +41,7 @@ class TryMazeVC: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .portrait
     }
 
     override func didReceiveMemoryWarning() {

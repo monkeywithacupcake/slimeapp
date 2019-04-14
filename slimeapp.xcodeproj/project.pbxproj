@@ -16,7 +16,7 @@
 		C84BDC0422374BCC00F02142 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BDC0322374BCC00F02142 /* Extensions.swift */; };
 		C8746A4922627E3D000212A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8746A4822627E3D000212A6 /* GameScene.swift */; };
 		C8746A4B22627E6E000212A6 /* TryMazeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8746A4A22627E6E000212A6 /* TryMazeVC.swift */; };
-		C8746A4D22627E90000212A6 /* GScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C8746A4C22627E90000212A6 /* GScene.sks */; };
+		C8746A4D22627E90000212A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C8746A4C22627E90000212A6 /* GameScene.sks */; };
 		C8BB9A532239C63C001F644D /* PinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9A522239C63C001F644D /* PinkView.swift */; };
 		C8BF84B7226237B100A1A2F0 /* ContainedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF84B6226237B100A1A2F0 /* ContainedView.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,7 @@
 		C84BDC0322374BCC00F02142 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8746A4822627E3D000212A6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		C8746A4A22627E6E000212A6 /* TryMazeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryMazeVC.swift; sourceTree = "<group>"; };
-		C8746A4C22627E90000212A6 /* GScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GScene.sks; sourceTree = "<group>"; };
+		C8746A4C22627E90000212A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C8BB9A522239C63C001F644D /* PinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkView.swift; sourceTree = "<group>"; };
 		C8BF84B6226237B100A1A2F0 /* ContainedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 				C82BD0012237238200ADDBD7 /* SlimeVC.swift */,
 				C8746A4822627E3D000212A6 /* GameScene.swift */,
 				C8746A4A22627E6E000212A6 /* TryMazeVC.swift */,
-				C8746A4C22627E90000212A6 /* GScene.sks */,
+				C8746A4C22627E90000212A6 /* GameScene.sks */,
 				C84BDC0522374BD800F02142 /* Views */,
 				C82BD0062237238400ADDBD7 /* Assets.xcassets */,
 				C82BD0082237238400ADDBD7 /* LaunchScreen.storyboard */,
@@ -212,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82BD00A2237238400ADDBD7 /* LaunchScreen.storyboard in Resources */,
-				C8746A4D22627E90000212A6 /* GScene.sks in Resources */,
+				C8746A4D22627E90000212A6 /* GameScene.sks in Resources */,
 				C82BD0072237238400ADDBD7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
