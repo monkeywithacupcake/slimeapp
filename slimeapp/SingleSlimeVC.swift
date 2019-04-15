@@ -14,10 +14,11 @@ class SingleSlimeVC: UIViewController {
 
     // MARK: - Properties
     var slime: ContainedView?
+    var grow = true
     var checkTimer: Timer!
     var box: UIView?
     var animator: UIDynamicAnimator?
-    var motionmanager: CMMotionManager?
+    var motionManager = CMMotionManager()
     var dd = CGVector(dx: CGFloat.random(in: 0.01...0.2), dy: CGFloat.random(in: 0.01...0.2))
     var gravity = UIGravityBehavior()
     var boundaries = UICollisionBehavior()
@@ -37,19 +38,29 @@ class SingleSlimeVC: UIViewController {
         animator = UIDynamicAnimator(referenceView: box!)
         animateSlime()
         checkTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkStatus), userInfo: nil, repeats: true)
-        if (motionmanager != nil) {
-            motionmanager!.startAccelerometerUpdates()
+
+        if motionManager.isDeviceMotionAvailable {
             updateMotion()
-            
         }
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        motionmanager!.stopDeviceMotionUpdates()
+        motionManager.stopDeviceMotionUpdates()
     }
 
 
     @objc func checkStatus(){
+        if (slime?.bounds.width)! > CGFloat(90.0) {
+            grow = false
+        } else if (slime?.bounds.width)! < CGFloat(10.0) {
+            grow = true
+        }
+        if grow == true {
+            slime?.changeSize(mult: 1.1)
+        } else {
+            slime?.changeSize(mult: 0.9)
+        }
         if(animator?.isRunning == true){
             print("animator is running")
             //print(animator!.items(in: box?.bounds ?? view.frame))
@@ -66,7 +77,8 @@ class SingleSlimeVC: UIViewController {
     @objc func updateAnimation(){
         //Gravity
         gravity = UIGravityBehavior(items: [slime!])
-        gravity.gravityDirection = CGVector(dx: CGFloat.random(in: 0.01...1.0), dy: CGFloat.random(in: 0.01...1.0))
+        gravity.gravityDirection = dd
+        //CGVector(dx: CGFloat.random(in: 0.01...1.0), dy: CGFloat.random(in: 0.01...1.0))
         //gravity.angle = CGFloat.random(in: 0.01...0.5)
         print("current gravity", gravity.gravityDirection.dx, gravity.gravityDirection.dy)
 
@@ -76,7 +88,7 @@ class SingleSlimeVC: UIViewController {
 
         //Elasticity
         bounce = UIDynamicItemBehavior(items: [slime!])
-        bounce.elasticity = 0.9
+        bounce.elasticity = 0.3
 
 
         animator?.addBehavior(boundaries)
@@ -118,7 +130,7 @@ class SingleSlimeVC: UIViewController {
 
         //Elasticity
         bounce = UIDynamicItemBehavior(items: [slime!])
-        bounce.elasticity = 0.9
+        bounce.elasticity = 0.3
         bounce.friction = 0.5
         bounce.resistance = 0.0
 
@@ -130,15 +142,10 @@ class SingleSlimeVC: UIViewController {
     }
 
     func updateMotion() {
-
-        motionmanager!.accelerometerUpdateInterval = 0.2
-        motionmanager!.startAccelerometerUpdates(to: OperationQueue.main){
-            (Data, error) in
-
-            self.gravity.gravityDirection = CGVector(dx: CGFloat((Data?.acceleration.x)!) * 15, dy: CGFloat((Data?.acceleration.y)!) * 15)
+        motionManager.deviceMotionUpdateInterval = 0.2
+        motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { (motion, error) in
+            self.gravity.gravityDirection = CGVector(dx: CGFloat((motion?.gravity.x)!), dy: CGFloat((motion?.gravity.y)!))
         }
     }
-
-
 }
 

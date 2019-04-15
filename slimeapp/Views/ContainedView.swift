@@ -36,4 +36,10 @@ class ContainedView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         //self.spanSuperView()
     }
+
+    public func changeSize(mult: CGFloat) {
+        let w = mult*self.bounds.height
+        self.frame = CGRect(x: 0.0, y: 0.0, width: w, height: w)
+        self.asCircle()
+    }
 }
