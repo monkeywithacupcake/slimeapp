@@ -14,8 +14,8 @@ class SingleSlimeVC: UIViewController {
 
     // MARK: - Properties
     var slime: ContainedView?
-    var grow = true
-    var checkTimer: Timer!
+    //var grow = true
+    //var checkTimer: Timer!
     var box: UIView?
     var animator: UIDynamicAnimator?
     var motionManager = CMMotionManager()
@@ -37,7 +37,7 @@ class SingleSlimeVC: UIViewController {
         //Initialize the animator
         animator = UIDynamicAnimator(referenceView: box!)
         animateSlime()
-        checkTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkStatus), userInfo: nil, repeats: true)
+        //checkTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkStatus), userInfo: nil, repeats: true)
 
         if motionManager.isDeviceMotionAvailable {
             updateMotion()
@@ -50,29 +50,29 @@ class SingleSlimeVC: UIViewController {
     }
 
 
-    @objc func checkStatus(){
-        if (slime?.bounds.width)! > CGFloat(90.0) {
-            grow = false
-        } else if (slime?.bounds.width)! < CGFloat(10.0) {
-            grow = true
-        }
-        if grow == true {
-            slime?.changeSize(mult: 1.1)
-        } else {
-            slime?.changeSize(mult: 0.9)
-        }
-        if(animator?.isRunning == true){
-            print("animator is running")
-            //print(animator!.items(in: box?.bounds ?? view.frame))
-        }
-        else {
-            print("NOT RUNNING")
-            animator?.removeAllBehaviors()
-            dd = CGVector(dx: (1-(dd.dx)), dy:(1-(dd.dy)))
-            updateAnimation()
-        }
-
-    }
+//    @objc func checkStatus(){
+//        if (slime?.bounds.width)! > CGFloat(90.0) {
+//            grow = false
+//        } else if (slime?.bounds.width)! < CGFloat(10.0) {
+//            grow = true
+//        }
+//        if grow == true {
+//            slime?.changeSize(mult: 1.1)
+//        } else {
+//            slime?.changeSize(mult: 0.9)
+//        }
+//        if(animator?.isRunning == true){
+//            print("animator is running")
+//            //print(animator!.items(in: box?.bounds ?? view.frame))
+//        }
+//        else {
+//            print("NOT RUNNING")
+//            animator?.removeAllBehaviors()
+//            dd = CGVector(dx: (1-(dd.dx)), dy:(1-(dd.dy)))
+//            updateAnimation()
+//        }
+//
+//    }
 
     @objc func updateAnimation(){
         //Gravity
