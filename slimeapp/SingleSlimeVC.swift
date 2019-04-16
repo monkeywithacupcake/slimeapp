@@ -19,7 +19,9 @@ class SingleSlimeVC: UIViewController {
     var box: UIView?
     var animator: UIDynamicAnimator?
     var motionManager = CMMotionManager()
-    var dd = CGVector(dx: CGFloat.random(in: 0.01...0.2), dy: CGFloat.random(in: 0.01...0.2))
+
+    //var dd = CGVector(dx: M_PI/2*M_PI_2, dy: 1.0)
+        //CGFloat.random(in: 0.01...0.2), dy: CGFloat.random(in: 0.01...0.2))
     var gravity = UIGravityBehavior()
     var boundaries = UICollisionBehavior()
     var bounce = UIDynamicItemBehavior()
@@ -77,10 +79,10 @@ class SingleSlimeVC: UIViewController {
     @objc func updateAnimation(){
         //Gravity
         gravity = UIGravityBehavior(items: [slime!])
-        gravity.gravityDirection = dd
+        //gravity.gravityDirection = dd
         //CGVector(dx: CGFloat.random(in: 0.01...1.0), dy: CGFloat.random(in: 0.01...1.0))
         //gravity.angle = CGFloat.random(in: 0.01...0.5)
-        print("current gravity", gravity.gravityDirection.dx, gravity.gravityDirection.dy)
+        //print("current gravity", gravity.gravityDirection.dx, gravity.gravityDirection.dy)
 
         //Collision
         boundaries = UICollisionBehavior(items: [slime!])
@@ -121,7 +123,7 @@ class SingleSlimeVC: UIViewController {
         gravity = UIGravityBehavior(items: [slime!])
         //let direction = CGVector(dx: CGFloat.random(in: 0.01...0.2), dy: CGFloat.random(in: 0.01...0.2))
         //dd = direction
-        gravity.gravityDirection = dd
+        //gravity.gravityDirection = dd
         //gravity.angle = CGFloat.random(in: 0.01...0.5)
 
         //Collision
